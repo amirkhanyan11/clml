@@ -1,14 +1,10 @@
 # Installation 
 ```bash
-cd /home/$USER
-mkdir -p clml
-git clone https://github.com/amirkhanyan11/clml.git __tmp_
-mv __tmp_/clml /home/$USER/clml
-rm -rf __tmp_
-cd ./clml
-chmod u+x clml
+git clone https://github.com/amirkhanyan11/clml.git /home/$USER/clml && cd /home/$USER/clml
+chmod u+x ./clml
 echo "export PATH=$PATH:/home/$USER/clml" >> ~/.zshrc
 source ~/.zshrc
+cd -
 ```
 
 ## How to use
