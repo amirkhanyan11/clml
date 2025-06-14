@@ -7,7 +7,7 @@ mv __tmp_/clml /home/$USER/clml
 rm -rf __tmp_
 cd ./clml
 chmod u+x clml
-echo "export PATH=$PATH:/home/$USER/clml >> ~/.zshrc"
+echo "export PATH=$PATH:/home/$USER/clml" >> ~/.zshrc
 source ~/.zshrc
 ```
 
