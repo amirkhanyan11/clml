@@ -1,0 +1,35 @@
+CWD=$PWD
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <name-of-your-class>"
+    exit 1
+fi
+
+cat << EOF | sed "s/Mlass/$1/g" > "$CWD/inc/$1.hpp"
+class Mlass
+{
+public:
+    const Mlass& operator=(const Mlass& rhv);
+public:
+    Mlass();
+    Mlass(const Mlass& rhv);
+    ~Mlass();
+};
+EOF
+
+
+cat << EOF | sed "s/Mlass/$1/g" > "$CWD/src/$1.cpp"
+#include "../inc/Mlass.hpp"
+
+Mlass::Mlass() {}
+
+Mlass::Mlass(const Mlass& rhv) {
+    *this = rhv;
+}
+
+Mlass::~Mlass() {}
+
+const Mlass& Mlass::operator=(const Mlass& rhv) {}
+EOF
+
+
